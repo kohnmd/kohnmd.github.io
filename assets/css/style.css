@@ -357,7 +357,7 @@ header nav li {
         width: 100%;
         height: auto;
         float: none;
-    }    
+    }
     
     header nav {
         margin-bottom: 20px;
@@ -366,4 +366,10 @@ header nav li {
     #me {
         margin: 0;
     }
+    
+    .loader {
+        margin-bottom: 0;
+        bottom: 2%;
+    }
+    
 }
