@@ -9,6 +9,7 @@
     <meta name="description" content="Hi. I'm Mike Kohn. I make websites, and other internet things.">
     <link href="http://fonts.googleapis.com/css?family=Inconsolata:400,700|Source+Code+Pro:200,300,400,500,600,700,900" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.ico"/>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
