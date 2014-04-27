@@ -36,7 +36,6 @@
             }
         }
         bgImage.onerror = function() {
-            console.log('error');
             removeLoadingOverlay();
         }
         bgImage.src = src;
@@ -45,11 +44,8 @@
     // Generates loading overlay and adds it to the DOM.
     function addLoadingOverlay() {
         if(document.getElementById('overlay') === null) {
-            console.log('adding overlay');
-        
             var overlay = document.createElement('div');
             overlay.id = 'overlay';
-            //overlay.style.height = body.offsetHeight+'px';
             overlay.style.height = Math.max( body.scrollHeight, body.offsetHeight, 
                    html.clientHeight, html.scrollHeight, html.offsetHeight ) + 'px';
             
