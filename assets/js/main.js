@@ -3,10 +3,12 @@
     var html = document.documentElement;
     var bgChangers = document.getElementsByClassName('bgChanger');
     var preloaded = [];
+    var changeToBackground = "";
     
     // Watch for clicks on bgChanger links.
     for(var i=0; i<bgChangers.length; i++) {
         bgChangers[i].onclick = function() {
+            changeToBackground = this.href;
             changeBackground(this.href);
             return false;
         };
@@ -17,6 +19,7 @@
         if( preloaded.indexOf(src) === -1 ) {
             preloadImage(src);
         } else {
+            removeLoadingOverlay();
             body.style.backgroundImage = 'url('+src+')';
         }
     }
@@ -26,9 +29,11 @@
         addLoadingOverlay();
         var bgImage = new Image();
         bgImage.onload = function() {
-            body.style.backgroundImage = 'url('+src+')';
-            removeLoadingOverlay();
             preloaded.push(src);
+            if(changeToBackground == src) {
+                body.style.backgroundImage = 'url('+src+')';
+                removeLoadingOverlay();
+            }
         }
         bgImage.onerror = function() {
             console.log('error');
@@ -39,28 +44,34 @@
     
     // Generates loading overlay and adds it to the DOM.
     function addLoadingOverlay() {
-        var overlay = document.createElement('div');
-        overlay.id = 'overlay';
-        //overlay.style.height = body.offsetHeight+'px';
-        overlay.style.height = Math.max( body.scrollHeight, body.offsetHeight, 
-               html.clientHeight, html.scrollHeight, html.offsetHeight ) + 'px';
+        if(document.getElementById('overlay') === null) {
+            console.log('adding overlay');
         
-        var loader = document.createElement('div');
-        loader.className = 'loader';
-        loader.appendChild( document.createElement('span') );
-        loader.appendChild( document.createElement('span') );
-        loader.appendChild( document.createElement('span') );
-        overlay.appendChild(loader);
-        
-        body.appendChild(overlay);
-        
-        setTimeout(function() {
-            overlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
-        }, 100)
+            var overlay = document.createElement('div');
+            overlay.id = 'overlay';
+            //overlay.style.height = body.offsetHeight+'px';
+            overlay.style.height = Math.max( body.scrollHeight, body.offsetHeight, 
+                   html.clientHeight, html.scrollHeight, html.offsetHeight ) + 'px';
+            
+            var loader = document.createElement('div');
+            loader.className = 'loader';
+            loader.appendChild( document.createElement('span') );
+            loader.appendChild( document.createElement('span') );
+            loader.appendChild( document.createElement('span') );
+            overlay.appendChild(loader);
+            
+            body.appendChild(overlay);
+            
+            setTimeout(function() {
+                overlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
+            }, 100)
+        }
     }
     
     // Removes the loading overlay. Called once image has loaded.
     function removeLoadingOverlay() {
-        body.removeChild( document.getElementById('overlay') );
+        if(document.getElementById('overlay') !== null) {
+            body.removeChild( document.getElementById('overlay') );
+        }
     }
 })();
