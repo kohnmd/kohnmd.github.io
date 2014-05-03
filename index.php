@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>I'm Mike Kohn.</title>
     <meta name="description" content="Hi. I'm Mike Kohn. I make websites, and other internet things.">
+    <link rel="canonical" href="http://mkohn.net/" />
     <link href="http://fonts.googleapis.com/css?family=Inconsolata:400,700|Source+Code+Pro:200,300,400,500,600,700,900" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/img/favicon.ico"/>
