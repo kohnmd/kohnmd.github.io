@@ -40,6 +40,7 @@ a {
     color: #FFF;
     font-weight: 600;
     text-decoration: none;
+    display: inline-block;
     position: relative;
     white-space: nowrap;
 }
@@ -180,7 +181,7 @@ header nav li {
     left: 0;
     z-index: -1;
     background-color: rgba(0,0,0,0);
-    
+
     -moz-transition: background-color 1000ms ease;
     -webkit-transition: background-color 1000ms ease;
     -ms-transition: background-color 1000ms ease;
@@ -210,13 +211,13 @@ header nav li {
     -ms-animation-duration: 1500ms;
     -o-animation-duration: 1500ms;
     animation-duration: 1500ms;
-    
+
     -moz-animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
     -ms-animation-iteration-count: infinite;
     -o-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    
+
     -moz-animation-timing-function: ease-in-out;
     -webkit-animation-timing-function: ease-in-out;
     -ms-animation-timing-function: ease-in-out;
@@ -342,34 +343,34 @@ header nav li {
  */
 
 @media only screen and (max-width: 720px) {
-    
+
     .wrapper {
         width: 240px;
         margin: 0 auto;
     }
-    
+
     header h1 {
         border-bottom: 0;
     }
-    
+
     header nav,
     #me {
         width: 100%;
         height: auto;
         float: none;
     }
-    
+
     header nav {
         margin-bottom: 20px;
     }
-    
+
     #me {
         margin: 0;
     }
-    
+
     .loader {
         margin-bottom: 0;
         bottom: 2%;
     }
-    
+
 }
